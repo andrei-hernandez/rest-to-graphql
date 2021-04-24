@@ -1,11 +1,14 @@
+
 // Añadir los imports
 import express from 'express';
 import compression from 'compression';
 import cors from 'cors';
 import schema from './schema/schema';
+import { SeasonsData } from './data/data-seasons';
 import { ApolloServer } from 'apollo-server-express';
 import { createServer } from 'http';
 import expressPlayground from 'graphql-playground-middleware-express';
+import { dataSources } from './data';
 // Inicializamos la aplicación express
 
 const app = express();
@@ -19,6 +22,9 @@ app.use(compression());
 const server = new ApolloServer({
     schema: schema,
     introspection: true, // Necesario
+    dataSources: () => ({
+        seasons: new dataSources.SeasonsData()
+    })
 });
 
 server.applyMiddleware({ app });

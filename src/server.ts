@@ -4,7 +4,6 @@ import express from 'express';
 import compression from 'compression';
 import cors from 'cors';
 import schema from './schema/schema';
-import { SeasonsData } from './data/data-seasons';
 import { ApolloServer } from 'apollo-server-express';
 import { createServer } from 'http';
 import expressPlayground from 'graphql-playground-middleware-express';

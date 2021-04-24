@@ -1,0 +1,9 @@
+type Query {
+  seasonsList: [Season!]!
+}
+
+type Season {
+  year: String!
+  url: String!
+  urlMobile: String!
+}

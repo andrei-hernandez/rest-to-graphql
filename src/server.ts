@@ -22,7 +22,8 @@ const server = new ApolloServer({
     schema: schema,
     introspection: true, // Necesario
     dataSources: () => ({
-        seasons: new dataSources.SeasonsData()
+        seasons: new dataSources.SeasonsData(),
+        races: new dataSources.RacesData()
     })
 });
 

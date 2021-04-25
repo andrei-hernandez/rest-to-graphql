@@ -1,13 +1,24 @@
 import { F1 } from './data-source';
+import { checkRound, checkYear } from '../lib/utils';
 
 export class RacesData extends F1 {
   constructor() {
     super();
   }
 
-  /*async getSeasons() {
-    return await this.get('seasons.json?limit=80', {
+  async getYear(year: string) {
+    year = checkYear(year);
+    return await this.get(`${year}.json`, {
       cacheOptions: { ttl: 60 }
     });
-  }*/
+  }
+
+  async getYearRound(year: string, round: number) {
+    year = checkYear(year);
+    round = checkRound(round);
+    return await this.get(`${year}/${round}.json`, {
+      cacheOptions: { ttl: 60 }
+    });
+  }
 }
+

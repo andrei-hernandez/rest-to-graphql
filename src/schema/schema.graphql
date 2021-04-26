@@ -1,10 +1,31 @@
 type Query {
+ "Lista de las temporadas de Formula 1. De 1950 a 2021" 
   seasonsList: [Season!]!
+  """
+  Obtenemos la informacion de las carreras seleccionadas por año.
+  Tener en cuenta que solo existen temporadas de 1950 a 2021.
+  """
   racesByYear(year: String!): [Race!]!
+  "Carrera seleccionada por año y numero de carrera."
   raceSelect(year: String!, round: Int!): Race!
+  """
+  Lista de los pilotos de la F1 de toda la historia.
+  Tenemos dos opciones: 
+  Por un lado obtenemos todos los pilotos.
+  Por otro lado, hacemos uso de la paginacion y podemos limitar el numero de resultados
+  """
   historyDrivers(pageElements: Int, page: Int): [Driver!]!
+  "Obtenemos la informacion de un piloto según su ID"
   driversSelect(id: String): Driver!
+  """
+  Obtenemos la informacion de las carreras seleccionadas por año.
+  Tener en cuenta que solo existen temporadas de 1950 a 2021.
+  """
   driversYear(year: String!): [Driver!]!
+  """
+  Obtenemos la informacion de las carreras seleccionadas por año.
+  Tener en cuenta que solo existen temporadas de 1950 a 2021.
+  """
   diversYearAndRound(year: String, round: Int!): [Driver!]!
 }
 

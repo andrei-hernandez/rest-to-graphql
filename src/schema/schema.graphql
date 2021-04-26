@@ -5,7 +5,7 @@ type Query {
   historyDrivers(pageElements: Int, page: Int): [Driver!]!
   driversSelect(id: String): Driver!
   driversYear(year: String!): [Driver!]!
-  diversYearAndRound(year: String, round: String!): [Driver!]!
+  diversYearAndRound(year: String, round: Int!): [Driver!]!
 }
 
 type Season {

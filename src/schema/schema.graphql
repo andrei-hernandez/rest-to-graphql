@@ -29,45 +29,78 @@ type Query {
   diversYearAndRound(year: String, round: Int!): [Driver!]!
 }
 
+"Object type season"
 type Season {
+  "Este será el año de la temporada en cuestion"
   year: String!
+  "Url a Wikipedia de la temporada en cuestion"
   url: String!
+  "Url para a Wikipedia de la temporada en cuestion en dispositivos moviles"
   urlMobile: String!
 }
 
+"Object type Race"
 type Race {
+  "temprada de la carrera en cuestion"
   season: String!
+  "ronda a la que pertenece la carrera en cuestion"
   round: String!
+  "url a Wikipedia de la carrera en cuestion"
   url: String!
+  "Url para a Wikipedia de la carrera en cuestion en dispositivos moviles"
   urlMobile: String!
+  "nombre de la carrera"
   name: String!
+  "Circuito donde se realizó la carrera"
   circuit: Circuit!
+  "Fecha en la que se realizó la carrera"
   date:String!
+  "Tiempo que duró la carrera"
   time: String
 }
 
+"Object type Circuit"
 type Circuit {
+  "Id del circuito"
   id: ID!
+  "url a wikipedia del circuito"
   url: String!
+  "url para a Wikipedia del circuito en dispositivos moviles"
   urlMobile: String!
+  "Nombre de la carrera en dispositivos moviles"
   name: String!
+  "Localzacion del circuito"
   location: Location!
 }
 
+"Object type Location"
 type Location {
+  "Latitud"
   lat: String!
+  "Longitud"
   lng: String!
+  "Localidad"
   locality: String!
+  "País"
   country: String!
 }
 
+"Object type Driver"
 type Driver {
+  "Id del pilot"
   id: String!
+  "Url a wikipedia de la biografia del piloto"
   url: String!
+  "url a wikipedia para dispositivos moviles del piloto"
   urlMobile: String!
+  "nombre del piloto"
   name: String!
+  "fecha de nacimiento del piloto"
   dateOfBirth: String!
+  "Nacionalidad del piloto"
   nationality: String!
+  "Codigo on board del piloto"
   code: String
+  "numero permanente del piloto"
   permanentNumber: String
 }

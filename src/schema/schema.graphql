@@ -27,6 +27,8 @@ type Query {
   Tener en cuenta que solo existen temporadas de 1950 a 2021.
   """
   diversYearAndRound(year: String, round: Int!): [Driver!]!
+
+  diversStandingPerYearAndRound(year: String, round: Int!): [Standing!]!
 }
 
 "Object type season"
@@ -103,4 +105,20 @@ type Driver {
   code: String
   "numero permanente del piloto"
   permanentNumber: String
+}
+
+type Standing {
+  postition: String!
+  positionText: String!
+  driver:  Driver!
+  points: String!
+  wins: String!
+  constructor: Constructor!
+}
+
+type Constructor {
+  id: String!
+  name: String!
+  url: String!
+  nationality: String!
 }

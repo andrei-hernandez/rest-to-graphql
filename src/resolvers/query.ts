@@ -27,6 +27,11 @@ const resolvers: IResolvers = {
       return await dataSources.drivers.getDriversById(id).then(
         (data: any) => data.MRData.DriverTable.Drivers[0]
       )
+    },
+    async driversYear(_: void, { year }, { dataSources }) {
+      return await dataSources.drivers.getDriversByYear(year).then(
+        (data: any) => data.MRData.DriverTable.Drivers
+      )
     }
   }
 };

@@ -1,3 +1,4 @@
+import { checkYear } from '../lib/utils';
 import { F1 } from './data-source';
 
 export class DriversData extends F1 {
@@ -20,6 +21,12 @@ export class DriversData extends F1 {
   }
   async getDriversById(id: string) {
     return await this.get(`drivers/${id}.json`, {
+      cacheOptions: { ttl: 60 }
+    });
+  }
+  async getDriversByYear(year: string) {
+    year = checkYear(year);
+    return await this.get(`${year}/drivers.json`, {
       cacheOptions: { ttl: 60 }
     });
   }

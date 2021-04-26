@@ -2,7 +2,7 @@ type Query {
   seasonsList: [Season!]!
   racesByYear(year: String!): [Race!]!
   raceSelect(year: String!, round: Int!): Race!
-  historyDrivers: [Driver!]!
+  historyDrivers(pageElements: Int, page: Int): [Driver!]!
   driversSelect(id: String): Driver!
 }
 

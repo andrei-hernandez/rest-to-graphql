@@ -1,4 +1,5 @@
 import { IResolvers } from "graphql-tools";
+import { dataSources } from "../data";
 
 // Los resolvers de las operaciones de consulta para devolver información
 const resolvers: IResolvers = {
@@ -45,7 +46,13 @@ const resolvers: IResolvers = {
     },
     async historyCircuits(_: void, { pageElements, page }, { dataSources }) {
       return await dataSources.circuits.getHistoryCircuits(pageElements, page).then(
-        (data: any) => data.MRData.CircuitTable.Circuits)
+        (data: any) => data.MRData.CircuitTable.Circuits
+      )
+    },
+    async circuitSelect(_: void, { id }, { dataSources }) {
+      return await dataSources.circuits.getCircuitsById(id).then(
+        (data: any) => data.MRData.CircuitTable.Circuits[0]
+      )
     }
   }
 };

@@ -28,9 +28,11 @@ type Query {
   """
   diversYearAndRound(year: String, round: Int!): [Driver!]!
 
-  diversStandingPerYear(year: String): [Standing!]!
+  diversStandingPerYear(year: String!): [Standing!]!
 
-  historyCircuits(pageElements: Int, page: Int): [Circuit!]!
+  historyCircuits(pageElements: Int!, page: Int!): [Circuit!]!
+
+  circuitSelect(id: String!): Circuit!
 }
 
 "Object type season"

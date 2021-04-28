@@ -32,7 +32,8 @@ const type: IResolvers = {
     constructors: parent => parent.Constructors
   },
   Constructor: {
-    id: parent => parent.constructorId
+    id: parent => parent.constructorId,
+    urlMobile: parent => getWikipediaMobileUrl(parent.url)
   }
 }
 

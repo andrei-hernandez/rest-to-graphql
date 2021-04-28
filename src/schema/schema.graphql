@@ -29,6 +29,8 @@ type Query {
   diversYearAndRound(year: String, round: Int!): [Driver!]!
 
   diversStandingPerYear(year: String): [Standing!]!
+
+  historyCircuits(pageElements: Int, page: Int): [Circuit!]!
 }
 
 "Object type season"
@@ -120,5 +122,6 @@ type Constructor {
   id: String!
   name: String!
   url: String!
+  urlMobile: String!
   nationality: String!
 }

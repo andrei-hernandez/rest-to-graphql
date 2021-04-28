@@ -42,6 +42,10 @@ const resolvers: IResolvers = {
       return await dataSources.standings.getStandings(year).then(
         (data: any) => data.MRData.StandingsTable.StandingsLists[0].DriverStandings
       )
+    },
+    async historyCircuits(_: void, { pageElements, page }, { dataSources }) {
+      return await dataSources.circuits.getHistoryCircuits(pageElements, page).then(
+        (data: any) => data.MRData.CircuitTable.Circuits)
     }
   }
 };

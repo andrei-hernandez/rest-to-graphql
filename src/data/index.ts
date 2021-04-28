@@ -1,3 +1,4 @@
+import { StandingsData } from './data-standings';
 import { DriversData } from './data-drivers';
 import { SeasonsData } from './data-seasons';
 import { RacesData } from './data-races';
@@ -5,5 +6,6 @@ import { RacesData } from './data-races';
 export const dataSources = {
   SeasonsData,
   RacesData,
-  DriversData
+  DriversData,
+  StandingsData
 }

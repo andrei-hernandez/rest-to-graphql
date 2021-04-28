@@ -37,6 +37,11 @@ const resolvers: IResolvers = {
       return await dataSources.drivers.getDriversByYearAndRound(year, round).then(
         (data: any) => data.MRData.DriverTable.Drivers
       )
+    },
+    async diversStandingPerYear(_: void, { year }, { dataSources }) {
+      return await dataSources.standings.getStandings(year).then(
+        (data: any) => data.MRData.StandingsTable.StandingsLists[0].DriverStandings
+      )
     }
   }
 };

@@ -28,7 +28,7 @@ type Query {
   """
   diversYearAndRound(year: String, round: Int!): [Driver!]!
 
-  diversStandingPerYearAndRound(year: String, round: Int!): [Standing!]!
+  diversStandingPerYear(year: String): [Standing!]!
 }
 
 "Object type season"
@@ -108,12 +108,12 @@ type Driver {
 }
 
 type Standing {
-  postition: String!
+  position: Int!
   positionText: String!
   driver:  Driver!
   points: String!
   wins: String!
-  constructor: Constructor!
+  constructors: [Constructor!]!
 }
 
 type Constructor {
